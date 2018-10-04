@@ -9,8 +9,10 @@
 	
 	<h3>Edit Penerbangan</h3>
 	<form th:action="@{/flight/update}" th:object="${currentFlight}" method = "POST">
+		
 		<input type="hidden" th:field="*{pilot}"/>
 		<input type="hidden" name="id" th:value="${currentFlight.id}" />		
+		
 		Flight Number: <br>
 		<input type="text" name="flightNumber" th:value = "${currentFlight.flightNumber}"/>
 		<br>

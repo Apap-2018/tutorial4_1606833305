@@ -17,6 +17,7 @@
 		
 		<h4>-----------------------------------</h4>
 		<h3> Pilot's Flights </h3>
+		<td><a th:href="@{/flight/add/} + ${pilot.licenseNumber}">Add Flight</a></td>
 		<h4>-----------------------------------</h4>
 		<div th:each="flight:${flights}">
 			<h4 th:text="'Flight ID: ' + ${flight.id}"></h4>
@@ -29,8 +30,6 @@
 			<br>
 		</div>
 		
-		<h4>-----------------------------------</h4>
-		<td><a th:href="@{/flight/add/} + ${pilot.licenseNumber}">Add Flight</a></td>
 		<h4>-----------------------------------</h4>
 		
 	</body>

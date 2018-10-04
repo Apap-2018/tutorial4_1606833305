@@ -6,7 +6,6 @@
 
 <body>
 	<h2>Hello!</h2>
-	
 	<h3>Tambah Penerbangan</h3>
 	<form th:action="@{/flight/add}" th:object="${flight}" method = "POST">
 		<input type="hidden" th:field="*{pilot}"/>

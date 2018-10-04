@@ -18,7 +18,6 @@ public class FlightServiceImpl implements FlightService{
 
 	public void addFlight(FlightModel flight) {
 		flightDb.save(flight);
-		
 	}
 
 	public List<FlightModel> selectAll() {
@@ -32,7 +31,6 @@ public class FlightServiceImpl implements FlightService{
 
 	@Override
 	public FlightModel getFlight(long id) {
-		// TODO Auto-generated method stub
 		return flightDb.findFlightById(id);
 	}
 
@@ -44,15 +42,10 @@ public class FlightServiceImpl implements FlightService{
 		updatedFlight.setTime(flight.getTime());
 		updatedFlight.setOrigin(flight.getOrigin());
 		flightDb.save(updatedFlight);
-		
 	}
 
 	@Override
 	public FlightModel findFlightByFlightNumber(String flightNumber) {
-		// TODO Auto-generated method stub
 		return flightDb.findFlightByFlightNumber(flightNumber);
 	}
-
-
-	
 }
