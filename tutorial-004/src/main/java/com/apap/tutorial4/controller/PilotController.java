@@ -31,6 +31,9 @@ public class PilotController {
 	@RequestMapping (value = "/pilot/view")
 	private String pilotView (@RequestParam ("licenseNumber") String licenseNumber, Model model) {
 		PilotModel pilot = pilotService.getPilotDetailByLicenseNumber(licenseNumber);
+		if (pilot == null) {
+			return "error";
+		}
 		model.addAttribute("pilot", pilot);
 
 		List <FlightModel> currentPilotFlights = new ArrayList();
@@ -66,7 +69,6 @@ public class PilotController {
 	private String updatePilot (@PathVariable ("licenseNumber") String licenseNumber, Model model) {
 		PilotModel pilot = pilotService.getPilotDetailByLicenseNumber(licenseNumber);
 		model.addAttribute("currentPilot", pilot);
-		System.out.println(pilot.getLicenseNumber() + "DELFA") ;
 		return "updatePilot";	
 	}
 	

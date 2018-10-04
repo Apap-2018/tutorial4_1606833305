@@ -71,7 +71,9 @@ public class FlightController {
 				Flights.add(fli);
 			}
 		}
-		
+		if (Flights.size() == 0){
+			return "error";
+		}
 		model.addAttribute("flightNumber", flightNumber);
 		model.addAttribute("flights", Flights);
 		return "viewFlight";		
